@@ -2,8 +2,8 @@
 
 PYTHON_EXEC := python3.10
 
-CLEARML_PROJECT_NAME := nsfw_classification
-CLEARML_DATASET_NAME := nsfw
+CLEARML_PROJECT_NAME := DetectionCoins
+CLEARML_DATASET_NAME := RussianCoins
 
 
 setup_ws:
@@ -16,12 +16,8 @@ setup_ws:
 	@echo `poetry env info -p`/bin/python
 
 
-convert:
-	poetry run $(PYTHON_EXEC) -m src.to_onnx $(PATH_MODEL)
+generate_dataset:
+	poetry run $(PYTHON_EXEC) -m src.generate_dataset $(data_dir) ${output_dir}
 
-run_training:
+train:
 	poetry run $(PYTHON_EXEC) -m src.train
-
-
-local_test:
-	poetry run $(PYTHON_EXEC) -m pytest tests
