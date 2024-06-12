@@ -5,7 +5,7 @@ from clearml import Task
 from ultralytics import YOLO
 
 
-def train_model(yaml_path, model_path="", epochs=20, imgsz=640, device="nms"):
+def train_model(yaml_path="./data/dataset/data.yaml", model_path="./weights/yolov8s.pt", epochs=20, imgsz=640, device=None):
     task = Task.init(project_name="RussianCoinsDetection", task_name="Detection")
     model_variant = Path(model_path).stem
     task.set_parameter("model_variant", model_variant)
