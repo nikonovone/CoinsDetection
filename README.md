@@ -22,11 +22,11 @@ data
 
 ### Create docker image
 
-1. `docker build -t \<TAG_NAME> .`
+1. `docker build -t <TAG_NAME> .`
 
 ### Run docker in interactive mode
 
-2. `docker run --rm -it --entrypoint bash -v ./weights:/app/weights -v ./data:/app/data \<TAG_NAME>`
+2. `docker run --rm -it --entrypoint bash -v ./weights:/app/weights -v ./data:/app/data <TAG_NAME>`
 
 ### Install dependicies
 
@@ -40,6 +40,6 @@ By default the torch version is set for the cpu, if you need training on the gpu
 
 ### Attach clearml
 
-5. `clearml-init`
-1. `make train ARGS='--model_path=<some path>'`
-1. `make test ARGS='--weights_path=<some path>'`
+5. `poetry run clearml-init`
+6. `make train ARGS='--model_path=<some path>'`
+7. `make test ARGS='--weights_path=<some path>'`
