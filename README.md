@@ -1,6 +1,45 @@
-1. docker build -t \<TAG_NAME> .
-1. docker run --rm -it --entrypoint bash -v ./weights:/app/weights -v ./data:/app/data \<TAG_NAME>
-1. make setup_ws
-1. make generate_dataset
-1. make train ARGS='--model_path=<some path>'
-1. make test ARGS='--weights_path=<some path>'
+## Structure of data folder
+
+```
+data
+├── for_generating     # Files for generation dataset
+│   ├── coins          # Images of coins
+│   └── textures       # Images of textures
+├── test               # Test data from task
+│   ├── images
+│   └── counts.json
+└── dataset            # Generated dataset to YOLO model
+    ├── train
+    │   ├── images
+    │   └── labels
+    ├── valid
+    │   ├── images
+    │   └── labels
+    └── data.yaml
+```
+
+## Run unstruction
+
+### Create docker image
+
+1. `docker build -t \<TAG_NAME> .`
+
+### Run docker in interactive mode
+
+2. `docker run --rm -it --entrypoint bash -v ./weights:/app/weights -v ./data:/app/data \<TAG_NAME>`
+
+### Install dependicies
+
+By default the torch version is set for the cpu, if you need training on the gpu you will need to change this
+
+3. `make setup_ws`
+
+### Generate dataset to YOLO
+
+4. `make generate_dataset`
+
+### Attach clearml
+
+5. `clearml-init`
+1. `make train ARGS='--model_path=<some path>'`
+1. `make test ARGS='--weights_path=<some path>'`
