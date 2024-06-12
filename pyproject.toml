@@ -1,19 +1,28 @@
 [tool.poetry]
-name = "visorlabs"
+name = "CoinsDetection"
 version = "0.1.0"
 description = ""
 authors = ["nikonovone <nikonov.nikita@hotmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "3.10.14"
+python = "3.10"
 opencv-python = "^4.10.0.82"
 pre-commit = "^3.7.1"
 ipykernel = "^6.29.4"
 ipywidgets = "^8.1.3"
 fire = "^0.6.0"
 rich = "^13.7.1"
+clearml = "^1.16.1"
+ultralytics = "^8.2.31"
+torch = {version = "^2.3.1+cu118", source = "pytorch_cuda"}
+torchvision = {version = "^0.18.1+cu118", source = "pytorch_cuda"}
 
+
+[[tool.poetry.source]]
+name = "pytorch_cuda"
+url = "https://download.pytorch.org/whl/cu118"
+priority = "explicit"
 
 [build-system]
 requires = ["poetry-core"]
