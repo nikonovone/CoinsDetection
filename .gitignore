@@ -1,6 +1,7 @@
 .DS_Store
 weights
-data
+data/dataset
+data/test
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

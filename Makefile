@@ -8,8 +8,8 @@ CLEARML_DATASET_NAME := RussianCoins
 
 setup_ws:
 	poetry env use $(PYTHON_EXEC)
-	poetry install --with notebooks
-	poetry run pre-commit install
+	poetry lock
+	poetry install
 	@echo
 	@echo "Virtual environment has been created."
 	@echo "Path to Python executable:"
@@ -21,3 +21,6 @@ generate_dataset:
 
 train:
 	poetry run $(PYTHON_EXEC) -m src.train ${ARGS}
+
+test:
+	poetry run $(PYTHON_EXEC) -m src.test ${ARGS}
