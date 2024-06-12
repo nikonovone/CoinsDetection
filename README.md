@@ -41,6 +41,9 @@ By default the torch version is set for the cpu, if you need training on the gpu
 #### Attach clearml
 
 5. `poetry run clearml-init`
+
+#### Run train. ```--model_path``` default is yolov8s.pt, you can replace it your weights
+
 6. `make train ARGS='--model_path=<some path>'`
 
 #### Run test, ```--download=True``` if you want to download test dataset, ```--weights_path``` - path to .pt file
