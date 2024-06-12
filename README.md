@@ -48,4 +48,5 @@ By default the torch version is set for the cpu, if you need training on the gpu
 
 # Results:
 Метрика 1. Средняя относительная ошибка количества монет: 13.7%
+
 Метрика 2. Средняя относительная ошибка количества денег: 40.8%
