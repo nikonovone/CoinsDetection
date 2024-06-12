@@ -7,7 +7,7 @@ from ultralytics import YOLO
 
 def train_model(
     yaml_path="./data/dataset/data.yaml",
-    model_path="./weights/yolov8s.pt",
+    model_path="yolov8s.pt",
     epochs=20,
     batch=32,
     imgsz=640,
