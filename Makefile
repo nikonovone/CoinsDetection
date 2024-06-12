@@ -17,7 +17,7 @@ setup_ws:
 
 
 generate_dataset:
-	poetry run $(PYTHON_EXEC) -m src.generate_dataset $(data_dir) ${output_dir}
+	poetry run $(PYTHON_EXEC) -m src.generate_dataset $(data_dir) ${output_dir} ${num_samples}
 
 train:
-	poetry run $(PYTHON_EXEC) -m src.train
+	poetry run $(PYTHON_EXEC) -m src.train ${ARGS}
