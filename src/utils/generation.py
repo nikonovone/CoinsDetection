@@ -216,7 +216,7 @@ def generate_data_yaml(save_dir: Path):
     names.extend(coin_names)
 
     yaml_config = {
-        "path": './'+ str(save_dir),
+        "path": '/app/'+ str(save_dir),
         "train": "./train/images",
         "val": "./valid/images",
         "nc": len(COST2LABEL) + 1,
