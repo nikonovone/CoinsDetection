@@ -20,9 +20,9 @@ def init(logger_name: str, log_level: str):
 
 
 def generate_data(
-    data_dir: str,
+    data_dir: str = './data/for_generation',
     output_dir: str = "output_data",
-    num_samples: int = 10,
+    num_samples: int = 300,
     val_size=0.2,
 ):
     """
