@@ -48,8 +48,3 @@ By default the torch version is set for the cpu, if you need training on the gpu
 
 #### Run test, ```--download=True``` if you want to download test dataset, ```--weights_path``` - path to .pt file
 7. `make test ARGS='--weights_path=<some path>'`
-
-# Results:
-Метрика 1. Средняя относительная ошибка количества монет: 13.7%
-
-Метрика 2. Средняя относительная ошибка количества денег: 40.8%
